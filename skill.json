@@ -1,0 +1,41 @@
+{
+  "name": "genpark-multi-model-cost-latency-router-skill",
+  "version": "1.0.0",
+  "description": "GenPark AI Agent Skill - Dynamic intent and budget-aware multi-model router selecting the Pareto-optimal LLM from 70+ models across latency and cost constraints.",
+  "homepage": "https://genpark.ai/mcp",
+  "author": "alphaparkinc",
+  "category": "model-orchestration",
+  "tags": [
+    "multi-model",
+    "model-router",
+    "cost-optimization",
+    "latency-router",
+    "intent-classifier"
+  ],
+  "inputs": {
+    "prompt": {
+      "type": "string"
+    },
+    "max_latency_ms": {
+      "type": "integer",
+      "default": 1500
+    },
+    "cost_weight": {
+      "type": "number",
+      "default": 0.3
+    }
+  },
+  "outputs": {
+    "selected_model": {
+      "type": "string"
+    },
+    "detected_intent": {
+      "type": "string"
+    },
+    "estimated_latency_ms": {
+      "type": "integer"
+    }
+  },
+  "entrypoint": "client.py",
+  "example": "example_usage.py"
+}
